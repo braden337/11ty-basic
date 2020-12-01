@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="{{ '/style.css' | url }}" defer />
+    <script src="{{ '/main.js' | url }}" defer /></script>
+    <title>
+      {% if title %}
+        {{ title }}
+      {% else %}
+        {{ site.name }}
+      {% endif %}
+    </title>
+  </head>
+
+  <body>
+    {% include header %}
+
+    <main id="{{ title | slug }}">
+      {{ content }}
+    </main>
+
+    {% include footer %}
+  </body>
+</html>

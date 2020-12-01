@@ -1,0 +1,169 @@
+@import '_includes/night-owl';
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $point == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+body {
+  > header,
+  > main,
+  > footer {
+    grid-column: 1 / -1;
+    padding: 1rem;
+  }
+
+  > main {
+    > * + * {
+      margin-top: 1rem !important;
+    }
+
+    @include breakpoint(md) {
+      grid-column: 2 / -2;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 3 / -3;
+    }
+  }
+
+  > main#archive {
+    @include breakpoint(md) {
+      grid-column: 4 / -4;
+    }
+  }
+
+  > main#contact {
+    @include breakpoint(md) {
+      grid-column: 3 / -3;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 5 / -5;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      @include breakpoint(md) {
+        grid-gap: 1rem;
+      }
+
+      > label,
+      > input,
+      > textarea {
+        grid-column: 1 / -1;
+        font-size: 1rem;
+      }
+
+      > label {
+        display: flex;
+
+        @include breakpoint(md) {
+          grid-column: 1 / 2;
+          align-items: center;
+          justify-content: flex-end;
+
+          &:last-of-type {
+            align-self: flex-start;
+          }
+        }
+      }
+
+      > textarea {
+        font-family: inherit;
+      }
+
+      > input,
+      > textarea {
+        padding: 0.25rem 0.5rem;
+
+        @include breakpoint(md) {
+          grid-column: 2 / -1;
+          font-size: 1rem;
+        }
+      }
+
+      > input + label,
+      > textarea + label,
+      > textarea + input {
+        margin-top: 1rem;
+
+        @include breakpoint(md) {
+          margin-top: 0;
+        }
+      }
+
+      > input[type='submit'] {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-row-gap: 1rem;
+
+  > * {
+    grid-column: 1 / -1;
+  }
+
+  img {
+    max-width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+
+  figure {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 1rem;
+
+    > img,
+    > figcaption {
+      width: 100%;
+      grid-column: 1 / -1;
+
+      @include breakpoint(md) {
+        grid-column: 3 / -3;
+      }
+    }
+  }
+
+  pre {
+    @include breakpoint(lg) {
+      grid-column: 3 / -3 !important;
+    }
+  }
+}
