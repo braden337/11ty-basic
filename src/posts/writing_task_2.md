@@ -11,6 +11,9 @@ sequi pariatur voluptas eum aspernatur? Voluptate sint molestias vero quas.
 
 ![cat](https://placekitten.com/600/400)
 
+This cat likes to learn about other cats on
+[Google](https://www.google.com/search?q=cats&tbm=isch).
+
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in, reprehenderit,
 cum atque natus quod aperiam earum veritatis placeat accusantium ea aut,
 possimus maiores quibusdam et rem temporibus id inventore.
