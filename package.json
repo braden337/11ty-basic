@@ -2,7 +2,7 @@
   "name": "11ty-basic",
   "scripts": {
     "clean": "rimraf dist .cache",
-    "assets": "parcel watch 'src/*.{js,scss}' --out-dir dist",
+    "assets": "parcel watch src/main.js src/style.scss --out-dir dist",
     "serve": "eleventy --serve",
     "dev": "run-p assets serve",
     "build": "eleventy",
