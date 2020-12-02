@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     markdownTemplateEngine: 'liquid',
+    pathPrefix: '/11ty-basic/',
     dir: {
       input: 'src',
       output: 'dist',
